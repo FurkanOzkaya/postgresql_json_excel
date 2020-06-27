@@ -4,6 +4,8 @@ This API use PostgreSql json type. and This api can use create excel view. You c
 
 # Instalation Guide
 
+Before installation you need to install PostgreSql database.
+
 ## With VirtualEnv
 
 1.) Clone Project
@@ -25,7 +27,8 @@ pip install -r requirments.txt
 Be sure virtualenv is active when you installing requirments.
 
 4.) Create .env file
-You need to create .env file according to .env.exaxmple file.
+
+You need to create .env file according to .env.example file.
 
 5.) Run
 ```
@@ -37,6 +40,32 @@ you can also run this code
 python manage.py runserver
 ```
 
+
+## With Docker
+1.) Clone Project
+```
+git clone https://github.com/FurkanOzkaya/postgresql_json_excel.git
+```
+2.) Create .env file
+
+You need to create .env file according to .env.example file.
+
+3.) Docker Build
+```
+cd postgresql_json_excel
+
+docker build -t excelapp .
+```
+
+4.) Docker Run
+```
+docker run --network=host excelapp
+```
+
+if you using local postgresql database you need to run with --network=host option.
+
+Default [excel_vue](https://github.com/FurkanOzkaya/excel_vue) project use 9000 port.
+Dockerfile writed according to this.
 
 # Design Document
 
