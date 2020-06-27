@@ -24,7 +24,10 @@ pip install -r requirments.txt
 ```
 Be sure virtualenv is active when you installing requirments.
 
-4.) Run
+4.) Create .env file
+You need to create .env file according to .env.exaxmple file.
+
+5.) Run
 ```
 python manage.py runserver 0.0.0.0:9000
 ```
