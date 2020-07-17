@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: api-deployment
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            component: api
+    template:
+        metadata:
+            labels:
+                component: api
+        spec:
+            containers:
+                - name: api
+                  image: excel_api
+                  imagePullPolicy: Never
+                  ports:
+                    - containerPort: 9000
+                  env:
+                    - name: PGHOST
+                      value: postgres-service
+                    - name: PGUSER
+                      value: excel
+                    - name: PGPORT
+                      value: "5432"
+                    - name: POSTGRES_PASSWORD
+                      value: "12345"
+
